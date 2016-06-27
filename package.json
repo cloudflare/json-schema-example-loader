@@ -1,0 +1,27 @@
+{
+  "name": "json-schema-example-loader",
+  "version": "0.0.1",
+  "description": "Webpack loader that transforms JSON HyperSchema (without $refs) into examples.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tajo/json-schema-example-loader.git"
+  },
+  "keywords": [
+    "json",
+    "schema",
+    "hyperschema",
+    "loader",
+    "webpack",
+    "example"
+  ],
+  "author": "Vojtech Miksu <vojtech@miksu.cz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tajo/json-schema-example-loader/issues"
+  },
+  "homepage": "https://github.com/tajo/json-schema-example-loader#readme"
+}
