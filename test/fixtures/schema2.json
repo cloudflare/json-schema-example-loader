@@ -1,0 +1,62 @@
+{
+  "id": "/fixtures/baz",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "identifier": {
+      "type": "number",
+      "description": "Baz ID",
+      "example": 456
+    },
+    "baz_prop": {
+      "type": "string",
+      "description": "Baz property",
+      "example": "boo"
+    },
+    "foo_prop": {
+      "type": "string",
+      "description": "Foo property",
+      "example": "bar"
+    }
+  },
+  "properties": {
+    "baz": {
+      "type": "string",
+      "description": "Baz property",
+      "example": "boo"
+    },
+    "foo": {
+      "type": "string",
+      "description": "Foo property",
+      "example": "bar"
+    }
+  },
+  "links": [
+    {
+      "title": "Get all bazzes",
+      "href": "/fixtures/bazzes",
+      "method": "GET",
+      "schema": {
+        "type": "object",
+        "description": "Queriable properties",
+        "properties": {
+          "foo": {
+            "type": "string",
+            "description": "Baz property",
+            "example": "boo"
+          }
+        }
+      },
+      "targetSchema": {
+        "rel": "self"
+      }
+    },
+    {
+      "title": "Get a single baz",
+      "href": "/fixtures/bazzes/{#/definitions/identifier}",
+      "method": "GET",
+      "targetSchema": {
+        "rel": "self"
+      }
+    }
+  ]
+}

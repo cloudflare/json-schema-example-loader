@@ -1,0 +1,298 @@
+{
+  "id": "/fixtures/foo",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Foo Object",
+  "description": "The foo object is bar",
+  "definitions": {
+    "identifier": {
+      "type": "number",
+      "description": "Foo ID",
+      "example": 123
+    },
+    "foo_prop": {
+      "type": "string",
+      "description": "Foo property",
+      "example": "bar"
+    },
+    "baz_prop": {
+      "type": "string",
+      "description": "Baz property",
+      "example": "boo"
+    },
+    "object_one": {
+      "type": "object",
+      "description": "Object 1",
+      "properties": {
+        "attribute_one": {
+          "type": "string",
+          "description": "Attribute 1",
+          "example": "One"
+        }
+      }
+    },
+    "object_two": {
+      "type": "object",
+      "description": "Object 2",
+      "properties": {
+        "attribute_two": {
+          "type": "string",
+          "description": "Attribute 2",
+          "example": "Two"
+        }
+      }
+    }
+  },
+  "properties": {
+    "ID": {
+      "type": "number",
+      "description": "Foo ID",
+      "example": 123
+    },
+    "foo": {
+      "type": "string",
+      "description": "Foo property",
+      "example": "bar"
+    },
+    "baz": {
+      "type": "string",
+      "description": "Baz property",
+      "example": "boo"
+    },
+    "boo": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Object 1",
+          "properties": {
+            "attribute_one": {
+              "type": "string",
+              "description": "Attribute 1",
+              "example": "One"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "description": "Object 2",
+          "properties": {
+            "attribute_two": {
+              "type": "string",
+              "description": "Attribute 2",
+              "example": "Two"
+            }
+          }
+        }
+      ]
+    },
+    "option": {
+      "type": "object",
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Object 2",
+          "properties": {
+            "attribute_two": {
+              "type": "string",
+              "description": "Attribute 2",
+              "example": "Two"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "description": "Object 1",
+          "properties": {
+            "attribute_one": {
+              "type": "string",
+              "description": "Attribute 1",
+              "example": "One"
+            }
+          }
+        }
+      ]
+    },
+    "composite": {
+      "allOf": [
+        {
+          "type": "object",
+          "description": "Object 1",
+          "properties": {
+            "attribute_one": {
+              "type": "string",
+              "description": "Attribute 1",
+              "example": "One"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "description": "Object 2",
+          "properties": {
+            "attribute_two": {
+              "type": "string",
+              "description": "Attribute 2",
+              "example": "Two"
+            }
+          }
+        }
+      ]
+    },
+    "nested_object": {
+      "id": "/fixtures/baz",
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "definitions": {
+        "identifier": {
+          "type": "number",
+          "description": "Baz ID",
+          "example": 456
+        },
+        "baz_prop": {
+          "type": "string",
+          "description": "Baz property",
+          "example": "boo"
+        },
+        "foo_prop": {
+          "type": "string",
+          "description": "Foo property",
+          "example": "bar"
+        }
+      },
+      "properties": {
+        "baz": {
+          "type": "string",
+          "description": "Baz property",
+          "example": "boo"
+        },
+        "foo": {
+          "type": "string",
+          "description": "Foo property",
+          "example": "bar"
+        }
+      },
+      "links": [
+        {
+          "title": "Get all bazzes",
+          "href": "/fixtures/bazzes",
+          "method": "GET",
+          "schema": {
+            "type": "object",
+            "description": "Queriable properties",
+            "properties": {
+              "foo": {
+                "type": "string",
+                "description": "Baz property",
+                "example": "boo"
+              }
+            }
+          },
+          "targetSchema": {
+            "rel": "self"
+          }
+        },
+        {
+          "title": "Get a single baz",
+          "href": "/fixtures/bazzes/{#/definitions/identifier}",
+          "method": "GET",
+          "targetSchema": {
+            "rel": "self"
+          }
+        }
+      ]
+    },
+    "array_prop": {
+      "type": "array",
+      "description": "Some array property description",
+      "items": {
+        "type": "string",
+        "description": "Foo property",
+        "example": "bar"
+      }
+    }
+  },
+  "additionalProperties": {
+    "plus_one": {
+      "type": "string",
+      "description": "Foo property",
+      "example": "bar"
+    }
+  },
+  "generator": {
+    "includeAdditionalProperties": true
+  },
+  "links": [
+    {
+      "title": "Get all foos",
+      "href": "/fixtures/foos",
+      "method": "GET",
+      "schema": {
+        "type": "object",
+        "description": "Queriable properties",
+        "properties": {
+          "foo": {
+            "type": "string",
+            "description": "Foo property",
+            "example": "bar"
+          }
+        }
+      },
+      "targetSchema": {
+        "rel": "self"
+      }
+    },
+    {
+      "title": "Get a single foo",
+      "href": "/fixtures/foos/{#/definitions/identifier}",
+      "method": "GET",
+      "targetSchema": {
+        "rel": "self"
+      }
+    },
+    {
+      "title": "Create a foo",
+      "href": "/fixtures/foos",
+      "method": "POST",
+      "schema": {
+        "type": "object",
+        "required": [
+          "foo",
+          "baz"
+        ],
+        "properties": {
+          "foo": "#/definitions/foo_prop",
+          "baz": "#/definitions/baz_prop",
+          "boo": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "Object 1",
+                "properties": {
+                  "attribute_one": {
+                    "type": "string",
+                    "description": "Attribute 1",
+                    "example": "One"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "description": "Object 2",
+                "properties": {
+                  "attribute_two": {
+                    "type": "string",
+                    "description": "Attribute 2",
+                    "example": "Two"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "targetSchema": {
+        "rel": "self"
+      }
+    }
+  ]
+}
