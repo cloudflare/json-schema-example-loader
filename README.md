@@ -3,8 +3,6 @@
 [![Build Status](https://travis-ci.org/tajo/json-schema-example-loader.svg?branch=master)](https://travis-ci.org/tajo/json-schema-example-loader)
 [![Code Climate](https://codeclimate.com/github/tajo/json-schema-example-loader/badges/gpa.svg)](https://codeclimate.com/github/tajo/json-schema-example-loader)
 [![Test Coverage](https://codeclimate.com/github/tajo/json-schema-example-loader/badges/coverage.svg)](https://codeclimate.com/github/tajo/json-schema-example-loader)
-[![Dependency Status](https://david-dm.org/tajo/json-schema-example-loader.svg)](https://david-dm.org/tajo/json-schema-example-loader)
-[![devDependency Status](https://david-dm.org/tajo/json-schema-example-loader/dev-status.svg)](https://david-dm.org/tajo/json-schema-example-loader#info=devDependencies)
 
 Webpack loader that transforms JSON HyperSchema (without $refs) into a new (completely different) datastructure that contains examples and simplified definitions that you can use in order to create nice API docs.
 
