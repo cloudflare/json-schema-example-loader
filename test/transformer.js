@@ -34,7 +34,7 @@ describe('Schema Transformer', function() {
     });
 
     it('should contain an html ID', function() {
-      expect(this.link).to.have.property('htmlID').that.is.a('string');
+      expect(this.link).to.have.property('html_id').that.is.a('string');
     });
 
     it('should have a URI', function() {
