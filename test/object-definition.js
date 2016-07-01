@@ -26,7 +26,7 @@ describe('Object Definition', function() {
   });
 
   beforeEach(function() {
-    this.definitionObjectKeys = ['title', 'description', 'allProps', 'requiredProps', 'optionalProps', 'objects', 'example'];
+    this.definitionObjectKeys = ['title', 'description', 'all_props', 'required_props', 'optional_props', 'objects', 'example'];
     this.definition = new ObjectDefinition(this.schema1);
     this.linkDefinition = new ObjectDefinition(this.schema1.links[2].schema);
   });
@@ -74,21 +74,21 @@ describe('Object Definition', function() {
     });
 
     it('should return required properites when defined', function() {
-      expect(this.linkDefinition.requiredProps).to.have.keys(['foo', 'baz']);
+      expect(this.linkDefinition.required_props).to.have.keys(['foo', 'baz']);
     });
 
     it('should include all properties found', function() {
-      expect(this.linkDefinition.allProps).to.have.keys(['foo', 'baz', 'boo']);
+      expect(this.linkDefinition.all_props).to.have.keys(['foo', 'baz', 'boo']);
     });
 
     it('should only include optional properties', function() {
-      expect(this.linkDefinition.optionalProps).to.have.key('boo');
-      expect(this.linkDefinition.optionalProps).to.not.have.keys(['foo', 'baz']);
+      expect(this.linkDefinition.optional_props).to.have.key('boo');
+      expect(this.linkDefinition.optional_props).to.not.have.keys(['foo', 'baz']);
     });
 
     it('should merge allOf references together', function() {
       var result = this.definition.build(this.allOfSchema);
-      expect(result).to.have.property('allProps').that.has.keys(['attribute_one', 'attribute_two']);
+      expect(result).to.have.property('all_props').that.has.keys(['attribute_one', 'attribute_two']);
     });
 
     it('should build an array of definition objects for oneOf references', function() {
@@ -120,7 +120,7 @@ describe('Object Definition', function() {
     });
 
     it('should include additional properties in all props when defined', function() {
-      expect(this.definition.allProps).to.contain.key('plus_one');
+      expect(this.definition.all_props).to.contain.key('plus_one');
     });
 
     it('should build an example', function() {

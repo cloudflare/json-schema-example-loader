@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/tajo/json-schema-example-loader#readme",
   "dependencies": {
+    "immutable": "^3.8.1",
     "loader-utils": "^0.2.15",
     "lodash": "^3.10.0"
   },
