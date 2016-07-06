@@ -74,7 +74,7 @@ describe('Object Definition', function() {
     });
 
     it('should return required properites when defined', function() {
-      expect(this.linkDefinition.required_props).to.have.keys(['foo', 'baz']);
+      expect(this.linkDefinition.required_props).to.have.members(['foo', 'baz']);
     });
 
     it('should include all properties found', function() {
@@ -82,8 +82,8 @@ describe('Object Definition', function() {
     });
 
     it('should only include optional properties', function() {
-      expect(this.linkDefinition.optional_props).to.have.key('boo');
-      expect(this.linkDefinition.optional_props).to.not.have.keys(['foo', 'baz']);
+      expect(this.linkDefinition.optional_props).to.have.members(['boo']);
+      expect(this.linkDefinition.optional_props).to.not.have.members(['foo', 'baz']);
     });
 
     it('should merge allOf references together', function() {
