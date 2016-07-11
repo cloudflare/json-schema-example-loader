@@ -6,4 +6,4 @@ node_js:
 script: 'npm run coverage'
 after_success:
   - npm install -g codeclimate-test-reporter
-  - codeclimate-test-reporter < coverage/lcov.info
+  - CODECLIMATE_REPO_TOKEN=e75b019bb6609508328989f7b3308215c888dfd780d492a0e1d821e2efd79f6d codeclimate-test-reporter < coverage/lcov.info
