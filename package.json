@@ -1,6 +1,6 @@
 {
   "name": "json-schema-example-loader",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Webpack loader that transforms JSON HyperSchema (without $refs) into examples.",
   "main": "lib/loader.js",
   "scripts": {

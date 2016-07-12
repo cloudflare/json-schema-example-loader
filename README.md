@@ -4,6 +4,14 @@
 [![Code Climate](https://codeclimate.com/github/tajo/json-schema-example-loader/badges/gpa.svg)](https://codeclimate.com/github/tajo/json-schema-example-loader)
 [![Test Coverage](https://codeclimate.com/github/tajo/json-schema-example-loader/badges/coverage.svg)](https://codeclimate.com/github/tajo/json-schema-example-loader)
 
+## Installation
+
+```
+npm install json-schema-example-loader --save
+```
+
+## Description
+
 Webpack loader that transforms JSON HyperSchema (without $refs) into an updated datastructure that contains examples and simplified definitions that you can use in order to create nice API docs. Some original properties are removed and some new are precomputed and added (see bellow).
 
 Why is this a webpack loader and not part of the app?
@@ -13,6 +21,28 @@ Why is this a webpack loader and not part of the app?
 - **PERFORMANCE**
 
 Do you have references ($ref) in your schemas? Use [json-schema-loader](https://www.npmjs.com/package/json-schema-loader) first.
+
+## Usage
+
+```js
+var transformedSchema = require('json-schema-example-loader!./schema.json');
+```
+
+Or define it in your `webpack.config.js`
+
+```js
+module: {
+  loaders: [{
+    test: /\.json$/,
+    exclude: /node_modules/,
+    loader: 'json-schema-example-loader'
+  }]
+}
+```
+
+```js
+var transformedSchema = require('./schema.json');
+```
 
 ## Example Input: product.json
 
