@@ -20,7 +20,7 @@
     "example"
   ],
   "author": "Vojtech Miksu <vojtech@miksu.cz>",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/tajo/json-schema-example-loader/issues"
   },
