@@ -1,9 +1,5 @@
 # JSON Schema Example Loader
 
-[![Build Status](https://travis-ci.org/tajo/json-schema-example-loader.svg?branch=master)](https://travis-ci.org/tajo/json-schema-example-loader)
-[![Code Climate](https://codeclimate.com/github/tajo/json-schema-example-loader/badges/gpa.svg)](https://codeclimate.com/github/tajo/json-schema-example-loader)
-[![Test Coverage](https://codeclimate.com/github/tajo/json-schema-example-loader/badges/coverage.svg)](https://codeclimate.com/github/tajo/json-schema-example-loader)
-
 ## Installation
 
 ```
