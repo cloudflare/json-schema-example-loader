@@ -1,5 +1,6 @@
 # JSON Schema Example Loader
 
+This package is part of the [doca](https://github.com/cloudflare/doca) suite.  Please file any issues at the [doca repository](https://github.com/cloudflare/doca/issues)
 ## Installation
 
 ```
