@@ -271,7 +271,7 @@ Link Curl examples can be further customized (enriched) with baseUrl and optiona
 
 ### Usage
 
-Notice: It includes json-schema-loader in a chain.
+Notice: It includes json-schema-loader (use matching major version) in a chain.
 
 ```js
 module: {
