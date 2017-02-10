@@ -28,13 +28,12 @@ describe('cURL Helper', function() {
       expect(str).to.contain('My-Header: some value');
     });
 
-    it('should include request body data', function() {
+    it('should include request body data for undefined encType', function() {
       var str = curl.generate('https://api.example.com/url', 'POST', null, {
         my_key: 'my value'
       });
 
-      expect(str).to.contain('my_key');
-      expect(str).to.contain('my value');
+      expect(str).to.contain('--data \'{"my_key":"my value"}\'');
     });
 
     it('should add data as a query string for GET', function() {
@@ -44,6 +43,14 @@ describe('cURL Helper', function() {
       });
 
       expect(str).to.contain('"https://api.example.com/url?key1=value1&key2=value2"');
+    });
+
+    it('should add form for encType mutlipart', function() {
+      var str = curl.generate('https://api.example.com/url', 'POST', null, {
+        file: '@value'
+      }, 'multipart/form-data');
+
+      expect(str).to.contain('--form "file=@value"');
     });
   });
 
