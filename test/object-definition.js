@@ -155,19 +155,19 @@ describe('Object Definition', function() {
       
       expect(this.definition.defineProperty({
         type: ['string', 'null']
-      })).to.have.property('type').that.equals(['string', 'null']);
+      })).to.have.property('type').that.eql(['string', 'null']);
     });
     
     it('should not derive a type from an enum', function() {
       expect(this.definition.defineProperty({
         type: ['string', 'null'],
         enum: [1, 2, 3]
-      })).to.have.property('type').that.equals(['string', 'null']);
+      })).to.have.property('type').that.eql(['string', 'null']);
       
       expect(this.definition.defineProperty({
         type: ['integer', 'null'],
         enum: ['a', 'b', 'c']
-      })).to.have.property('type').that.equals(['integer', 'null']);
+      })).to.have.property('type').that.eql(['integer', 'null']);
     });
 
     it('should define an example', function() {
