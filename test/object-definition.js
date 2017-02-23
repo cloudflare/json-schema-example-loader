@@ -158,7 +158,7 @@ describe('Object Definition', function() {
       })).to.have.property('type').that.eql(['string', 'null']);
     });
     
-    it('should not derive a type from an enum', function() {
+    it('should derive a type from type definition even if enum is of a different type', function() {
       expect(this.definition.defineProperty({
         type: ['string', 'null'],
         enum: [1, 2, 3]
