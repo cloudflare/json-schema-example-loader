@@ -148,28 +148,26 @@ describe('Object Definition', function() {
       expect(this.definition.defineProperty({})).to.be.an('object');
     });
 
-    it('should include a type defined by the property', function() {
+    it('should always include a type defined by the property', function() {
       expect(this.definition.defineProperty({
         type: 'string'
       })).to.have.property('type').that.equals('string');
+      
+      expect(this.definition.defineProperty({
+        type: ['string', 'null']
+      })).to.have.property('type').that.eql(['string', 'null']);
     });
-
-    it('should derive a type from an enum', function() {
+    
+    it('should derive a type from type definition even if enum is of a different type', function() {
       expect(this.definition.defineProperty({
-        enum: ['a', 'b', 'c']
-      }), 'string').to.have.property('type').that.equals('string');
-
-      expect(this.definition.defineProperty({
+        type: ['string', 'null'],
         enum: [1, 2, 3]
-      }), 'number').to.have.property('type').that.equals('number');
-
+      })).to.have.property('type').that.eql(['string', 'null']);
+      
       expect(this.definition.defineProperty({
-        enum: [{a: 1}, {b: 2}, {c: 3}]
-      }), 'object').to.have.property('type').that.equals('object');
-
-      expect(this.definition.defineProperty({
-        enum: [true, false]
-      }), 'boolean').to.have.property('type').that.equals('boolean');
+        type: ['integer', 'null'],
+        enum: ['a', 'b', 'c']
+      })).to.have.property('type').that.eql(['integer', 'null']);
     });
 
     it('should define an example', function() {
