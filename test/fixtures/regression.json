@@ -1,0 +1,25 @@
+{
+  "id": "/fixtures/regression",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Regression Test Schema",
+  "links": [
+    {
+      "title": "Test bugs: required outside of schema",
+      "href": "/fixtures/regressions",
+      "method": "POST",
+      "required": [
+        "foo",
+        "baz"
+      ],
+      "schema": {
+        "required": ["boo"],
+        "properties": {
+          "foo": {"type": "boolean"},
+          "baz": {"type": "boolean"},
+          "boo": {"type": "boolean"}
+        }
+      }
+    }
+  ]
+}
