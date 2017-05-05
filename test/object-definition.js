@@ -28,7 +28,7 @@ describe('Object Definition', function() {
   beforeEach(function() {
     this.definitionObjectKeys = ['title', 'description', 'all_props', 'required_props', 'optional_props', 'objects', 'example'];
     this.definition = new ObjectDefinition(this.schema1);
-    this.linkDefinition = new ObjectDefinition(this.schema1.links[2].schema);
+    this.linkParameters = new ObjectDefinition(this.schema1.links[2].schema);
   });
 
   describe('#constructor', function() {
@@ -74,16 +74,16 @@ describe('Object Definition', function() {
     });
 
     it('should return required properites when defined', function() {
-      expect(this.linkDefinition.required_props).to.have.members(['foo', 'baz']);
+      expect(this.linkParameters.required_props).to.have.members(['foo', 'baz']);
     });
 
     it('should include all properties found', function() {
-      expect(this.linkDefinition.all_props).to.have.keys(['foo', 'baz', 'boo']);
+      expect(this.linkParameters.all_props).to.have.keys(['foo', 'baz', 'boo']);
     });
 
     it('should only include optional properties', function() {
-      expect(this.linkDefinition.optional_props).to.have.members(['boo']);
-      expect(this.linkDefinition.optional_props).to.not.have.members(['foo', 'baz']);
+      expect(this.linkParameters.optional_props).to.have.members(['boo']);
+      expect(this.linkParameters.optional_props).to.not.have.members(['foo', 'baz']);
     });
 
     it('should merge allOf references together', function() {
