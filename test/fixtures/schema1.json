@@ -44,10 +44,15 @@
     }
   },
   "properties": {
-    "ID": {
+    "id": {
       "type": "number",
       "description": "Foo ID",
       "example": 123
+    },
+    "ID": {
+      "type": "string",
+      "description": "tests that ID is no longer a special case",
+      "example": "something"
     },
     "foo": {
       "type": "string",

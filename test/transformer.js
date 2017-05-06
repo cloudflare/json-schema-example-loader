@@ -128,6 +128,7 @@ describe('Schema Transformer', function() {
       expect(data).to.be.an('object');
       expect(data).to.deep.equal({
         id: 123,
+        ID: 'something',
         foo: 'bar',
         baz: 'boo',
         array_prop: ['bar'],
