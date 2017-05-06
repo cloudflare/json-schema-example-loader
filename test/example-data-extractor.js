@@ -44,7 +44,6 @@ describe('Example Data Extractor', function() {
       this.example = extractor.mapPropertiesToExamples(this.schema1.properties, this.schema1);
       // Makes tests easier to write
       this.properties = _.keys(this.schema1.properties);
-      this.properties[this.properties.indexOf('ID')] = 'id';
     });
 
     it('should build example values from the given property definitions', function() {
@@ -76,8 +75,11 @@ describe('Example Data Extractor', function() {
       expect(this.example.nested_object).to.have.keys(_.keys(this.schema2.properties));
     });
 
-    it('should lowercase ID property references', function() {
-      expect(this.example).to.not.contain.key('ID');
+    it('should NOT lowercase ID property references', function() {
+      expect(this.example).to.contain.key('ID');
+    });
+
+    it('should handle lowercase id properties', function() {
       expect(this.example).to.contain.key('id');
     });
 

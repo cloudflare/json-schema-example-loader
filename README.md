@@ -45,8 +45,8 @@ var transformedSchema = require('./schema.json');
 
 ```json
 {
-  "id": "/product",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://api.example.com/product",
+  "$schema": "http://json-schema.org/draft-04/hyper-schema#",
   "title": "Product",
   "description": "A product available for sale in a store",
   "type": "object",
@@ -68,12 +68,12 @@ var transformedSchema = require('./schema.json');
     }
   },
   "required": [
-    "ID",
+    "id",
     "name",
     "description"
   ],
   "properties": {
-    "ID": {
+    "id": {
       "type": "string",
       "description": "Product SKU",
       "example": "ABC-123"
@@ -132,7 +132,7 @@ var transformedSchema = require('./schema.json');
 
 ```json
 {
-  "id": "/product",
+  "id": "https://api.example.com/product",
   "title": "Product",
   "description": "A product available for sale in a store",
   "type": "object",
@@ -181,7 +181,7 @@ var transformedSchema = require('./schema.json');
   "object_definition": {
     "_formatter": {},
     "all_props": {
-      "ID": {
+      "id": {
         "type": "string",
         "example": "\"ABC-123\"",
         "description": "Product SKU"
@@ -198,7 +198,7 @@ var transformedSchema = require('./schema.json');
       }
     },
     "required_props": [
-      "ID",
+      "id",
       "name",
       "description"
     ],
