@@ -36,9 +36,9 @@
       "description": "Object 2",
       "properties": {
         "attribute_two": {
-          "type": "string",
+          "type": "number",
           "description": "Attribute 2",
-          "example": "Two"
+          "example": 2
         }
       }
     }
@@ -78,9 +78,9 @@
           "description": "Object 2",
           "properties": {
             "attribute_two": {
-              "type": "string",
+              "type": "number",
               "description": "Attribute 2",
-              "example": "Two"
+              "example": 2
             }
           }
         }
@@ -94,9 +94,9 @@
           "description": "Object 2",
           "properties": {
             "attribute_two": {
-              "type": "string",
+              "type": "number",
               "description": "Attribute 2",
-              "example": "Two"
+              "example": 2
             }
           }
         },
@@ -131,9 +131,9 @@
           "description": "Object 2",
           "properties": {
             "attribute_two": {
-              "type": "string",
+              "type": "number",
               "description": "Attribute 2",
-              "example": "Two"
+              "example": 2
             }
           }
         }
@@ -280,9 +280,9 @@
                 "description": "Object 2",
                 "properties": {
                   "attribute_two": {
-                    "type": "string",
+                    "type": "number",
                     "description": "Attribute 2",
-                    "example": "Two"
+                    "example": 2
                   }
                 }
               }

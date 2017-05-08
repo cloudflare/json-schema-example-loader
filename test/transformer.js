@@ -118,7 +118,7 @@ describe('Schema Transformer', function() {
       });
       expect(this.example.composite).to.eql({
         attribute_one: 'One',
-        attribute_two: 'Two'
+        attribute_two: 2
       });
       expect(this.example.nested_object).to.not.be.empty;
     });
@@ -140,10 +140,10 @@ describe('Schema Transformer', function() {
         },
         composite: {
           attribute_one: 'One',
-          attribute_two: 'Two'
+          attribute_two: 2
         },
         option: {
-          attribute_two: 'Two'
+          attribute_two: 2
         },
         plus_one: 'bar'
       });
@@ -167,10 +167,10 @@ describe('Schema Transformer', function() {
             },
             composite: {
               attribute_one: 'One',
-              attribute_two: 'Two'
+              attribute_two: 2
             },
             option: {
-              attribute_two: 'Two'
+              attribute_two: 2
             },
             plus_one: 'bar'
           });
