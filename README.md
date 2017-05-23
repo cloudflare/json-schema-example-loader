@@ -245,7 +245,8 @@ As you can see, some properties are missing and some are added/updated. Removed 
   - all_props : *object* - all required properties (object where keys = prop names)
   - required_props : *array* - list of keys in all_props
   - optional_props : *array* - list of keys in all_props
-  - objects : *array* - nested object_definition (in case when oneOf/anyOf/allOf are used)
+  - objects : *array* - nested object_definition (in case when oneOf/anyOf are used)
+  - which_of : *string* - the name of the property used for objects, if any
   - example : *string* - stringified example of the whole schema object
 
 **At the link level:**
