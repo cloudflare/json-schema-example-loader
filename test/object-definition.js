@@ -121,7 +121,7 @@ describe('Object Definition', function() {
       expect(result.which_of).to.equal('anyOf');
     });
 
-    it('should include additional properties in all props when defined', function() {
+    it('should include extra properties in all props when defined', function() {
       expect(this.definition.all_props).to.contain.key('plus_one');
     });
 
