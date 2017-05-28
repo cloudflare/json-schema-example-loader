@@ -125,7 +125,7 @@ describe('Example Data Extractor', function() {
       }, this.schema1)).to.be.an('object');
     });
 
-    it('should include additional properties', function() {
+    it('should include extra properties', function() {
       expect(this.example).to.have.property('plus_one').that.is.not.empty;
     });
   });

@@ -216,7 +216,7 @@
       }
     }
   },
-  "additionalProperties": {
+  "extraProperties": {
     "plus_one": {
       "type": "string",
       "description": "Foo property",
@@ -224,7 +224,7 @@
     }
   },
   "generator": {
-    "includeAdditionalProperties": true
+    "includeExtraProperties": true
   },
   "links": [
     {
