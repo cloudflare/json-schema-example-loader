@@ -214,6 +214,60 @@
         "description": "Foo property",
         "example": "bar"
       }
+    },
+    "tuple_prop": {
+      "type": "array",
+      "description": "A pair of things",
+      "items": [
+        {
+          "type": "integer",
+          "example": 42
+        },
+        {
+          "type": "string",
+          "example": "answer"
+        }
+      ],
+      "additionalItems": false
+    },
+    "tuple_prop_additional": {
+      "type": "array",
+      "description": "One special, the rest the same",
+      "items": [
+        {
+          "type": "boolean",
+          "example": true
+        }
+      ],
+      "additionalItems": {
+        "type": "number",
+        "example": 3.14
+      },
+      "minItems": 3
+    },
+    "pass_through_keywords": {
+      "type": "object",
+      "description": "Keywords for which we do not create examples, with an example outside of those keywords.",
+      "patternProperties": {
+        "^[a-f]+$": {
+          "type": "integer",
+          "example": 5
+        }
+      },
+      "additionalProperties": {
+        "type": "string",
+        "example": "ex"
+      },
+      "example": {
+        "a": 5,
+        "x": "ex"
+      }
+    }
+  },
+  "not": {
+    "description": "Tests that 'not' is passed through",
+    "properties": {
+      "abc": {}
     }
   },
   "extraProperties": {
@@ -314,7 +368,7 @@
       },
       "targetSchema": {
         "type": "array",
-        "minItems": 2,
+        "minItems": 3,
         "maxItems": 5,
         "items": {
           "rel": "self"
