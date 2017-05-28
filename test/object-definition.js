@@ -103,6 +103,7 @@ describe('Object Definition', function() {
       expect(result.objects).to.have.length(2);
       expect(result.objects[0], 'first object').to.have.keys(this.definitionObjectKeys);
       expect(result.objects[1], 'second object').to.have.keys(this.definitionObjectKeys);
+      expect(result.which_of).to.equal('oneOf');
     });
 
     it('should build an array of definition objects for anyOf references', function() {
@@ -117,6 +118,7 @@ describe('Object Definition', function() {
       expect(result.objects).to.have.length(2);
       expect(result.objects[0], 'first object').to.have.keys(this.definitionObjectKeys);
       expect(result.objects[1], 'second object').to.have.keys(this.definitionObjectKeys);
+      expect(result.which_of).to.equal('anyOf');
     });
 
     it('should include additional properties in all props when defined', function() {

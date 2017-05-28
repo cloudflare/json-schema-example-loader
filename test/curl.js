@@ -13,8 +13,11 @@ var curl = require('../lib/curl');
 
 describe('cURL Helper', function() {
   describe('#generate', function() {
-    it('should return a string', function() {
-      expect(curl.generate('https://api.example.com/url')).to.be.a('string');
+    it('should return a string ending in the url', function() {
+      var url = 'https://api.example.com/url';
+      var curlString = curl.generate(url);
+      expect(curlString).to.be.a('string');
+      expect(curlString.endsWith(url + '"')).to.be.true;
     });
 
     it('should include the HTTP method', function() {
