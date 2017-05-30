@@ -132,6 +132,9 @@ describe('Schema Transformer', function() {
         foo: 'bar',
         baz: 'boo',
         array_prop: ['bar'],
+        tuple_prop: [42, "answer"],
+        tuple_prop_additional: [true, 3.14, 3.14],
+        pass_through_keywords: {"a": 5, "x": "ex"},
         boo: {
           attribute_one: 'One'
         },
@@ -148,34 +151,37 @@ describe('Schema Transformer', function() {
         },
         plus_one: 'bar'
       });
+    });
 
-        it('should handle rel=self references as an array', function() {
-          var data = this.transformer.generateExample(this.schema1.links[3].targetSchema, this.schema1);
-          expect(data).to.be.an('array');
-          expect(data.length).to.be.gte(2);
-          expect(data.length).to.be.lte(5);
-          expect(data[0]).to.deep.equal({
-            id: 123,
-            foo: 'bar',
-            baz: 'boo',
-            array_prop: ['bar'],
-            boo: {
-              attribute_one: 'One'
-            },
-            nested_object: {
-              baz: 'boo',
-              foo: 'bar'
-            },
-            composite: {
-              attribute_one: 'One',
-              attribute_two: 2
-            },
-            option: {
-              attribute_two: 2
-            },
-            plus_one: 'bar'
-          });
-        });
+    it('should handle rel=self references as an array', function() {
+      var data = transformer.generateExample(this.schema1.links[3].targetSchema, this.schema1);
+      expect(data).to.be.an('array');
+      expect(data.length).to.equal(3);
+      expect(data[0]).to.deep.equal({
+        id: 123,
+        ID: 'something',
+        foo: 'bar',
+        baz: 'boo',
+        array_prop: ['bar'],
+        tuple_prop: [42, "answer"],
+        tuple_prop_additional: [true, 3.14, 3.14],
+        pass_through_keywords: {"a": 5, "x": "ex"},
+        boo: {
+          attribute_one: 'One'
+        },
+        nested_object: {
+          baz: 'boo',
+          foo: 'bar'
+        },
+        composite: {
+          attribute_one: 'One',
+          attribute_two: 2
+        },
+        option: {
+          attribute_two: 2
+        },
+        plus_one: 'bar'
+      });
     });
   });
 });

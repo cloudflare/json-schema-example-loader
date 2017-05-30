@@ -135,6 +135,9 @@ describe('Object Definition', function() {
       expect(this.definition.example).to.contain('composite');
       expect(this.definition.example).to.contain('nested_object');
       expect(this.definition.example).to.contain('array_prop');
+      expect(this.definition.example).to.contain('tuple_prop');
+      expect(this.definition.example).to.contain('tuple_prop_additional');
+      expect(this.definition.example).to.contain('pass_through_keywords');
       expect(this.definition.example).to.contain('plus_one');
     });
   });
@@ -148,6 +151,15 @@ describe('Object Definition', function() {
   describe('#defineProperty', function() {
     it('should return an object', function() {
       expect(this.definition.defineProperty({})).to.be.an('object');
+    });
+
+    it('should include pass-through keywords', function() {
+      expect(this.definition).to.have.property('not');
+
+      var all_props = this.definition.all_props;
+      expect(all_props).to.have.property('pass_through_keywords');
+      expect(all_props.pass_through_keywords).to.have.property('additionalProperties')
+      expect(all_props.pass_through_keywords).to.have.property('patternProperties')
     });
 
     it('should always include a type defined by the property', function() {
@@ -249,6 +261,16 @@ describe('Object Definition', function() {
       expect(example).to.not.equal('[]');
       expect(example).to.contain('[');
       expect(example).to.contain(']');
+    });
+
+    it('should detect if the property is a tuple', function() {
+      var example = this.definition.getExampleFromProperty(this.schema1.properties.tuple_prop);
+      expect(example).to.equal('[\n  42,\n  "answer"\n]');
+    });
+
+    it('should handle additionalItems for tuples', function() {
+      var example = this.definition.getExampleFromProperty(this.schema1.properties.tuple_prop_additional);
+      expect(example).to.equal('[\n  true,\n  3.14,\n  3.14\n]');
     });
   });
 });
