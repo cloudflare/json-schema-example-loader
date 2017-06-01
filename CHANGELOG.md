@@ -2,7 +2,7 @@
 
 * `"required"` and `"type"` now behave normally with the LDO's `"schema"` (previously they needed to be outside of `"schema"` at the top of the LDO)
 * the nonstandard behavior of `"additionalProperties"` (properties that are not rolled up in the request/response examples) is now implemented as `"extraProperties"`
-* Properties named `"ID"` are no longer treated specially (downcased to `"id"   ) as this was a workaround for a problem that no longer exists.
+* Properties named `"ID"` are no longer treated specially (downcased to `"id"`) as this was a workaround for a problem that no longer exists.
 
 ## v1.2.2
 
