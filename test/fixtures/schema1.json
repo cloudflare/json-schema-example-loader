@@ -193,7 +193,7 @@
             }
           },
           "targetSchema": {
-            "rel": "self"
+            "cfRecurse": ""
           }
         },
         {
@@ -201,7 +201,7 @@
           "href": "/fixtures/bazzes/{#/definitions/identifier}",
           "method": "GET",
           "targetSchema": {
-            "rel": "self"
+            "cfRecurse": ""
           }
         }
       ]
@@ -243,7 +243,7 @@
         }
       },
       "targetSchema": {
-        "rel": "self"
+        "cfRecurse": ""
       }
     },
     {
@@ -251,7 +251,7 @@
       "href": "/fixtures/foos/{#/definitions/identifier}",
       "method": "GET",
       "targetSchema": {
-        "rel": "self"
+        "cfRecurse": ""
       }
     },
     {
@@ -296,7 +296,7 @@
         }
       },
       "targetSchema": {
-        "rel": "self"
+        "cfRecurse": ""
       }
     },
     {
@@ -317,7 +317,7 @@
         "minItems": 2,
         "maxItems": 5,
         "items": {
-          "rel": "self"
+          "cfRecurse": ""
         }
       }
     }

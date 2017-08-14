@@ -123,7 +123,7 @@ describe('Schema Transformer', function() {
       expect(this.example.nested_object).to.not.be.empty;
     });
 
-    it('should handle rel=self references', function() {
+    it('should handle cfRecurse references', function() {
       var data = transformer.generateExample(this.schema1.links[0].targetSchema, this.schema1);
       expect(data).to.be.an('object');
       expect(data).to.deep.equal({
@@ -148,34 +148,35 @@ describe('Schema Transformer', function() {
         },
         plus_one: 'bar'
       });
+    });
 
-        it('should handle rel=self references as an array', function() {
-          var data = this.transformer.generateExample(this.schema1.links[3].targetSchema, this.schema1);
-          expect(data).to.be.an('array');
-          expect(data.length).to.be.gte(2);
-          expect(data.length).to.be.lte(5);
-          expect(data[0]).to.deep.equal({
-            id: 123,
-            foo: 'bar',
-            baz: 'boo',
-            array_prop: ['bar'],
-            boo: {
-              attribute_one: 'One'
-            },
-            nested_object: {
-              baz: 'boo',
-              foo: 'bar'
-            },
-            composite: {
-              attribute_one: 'One',
-              attribute_two: 2
-            },
-            option: {
-              attribute_two: 2
-            },
-            plus_one: 'bar'
-          });
-        });
+    it('should handle cfRecurse references as an array', function() {
+      var data = transformer.generateExample(this.schema1.links[3].targetSchema, this.schema1);
+      expect(data).to.be.an('array');
+      expect(data.length).to.be.gte(2);
+      expect(data.length).to.be.lte(5);
+      expect(data[0]).to.deep.equal({
+        id: 123,
+        ID: 'something',
+        foo: 'bar',
+        baz: 'boo',
+        array_prop: ['bar'],
+        boo: {
+          attribute_one: 'One'
+        },
+        nested_object: {
+          baz: 'boo',
+          foo: 'bar'
+        },
+        composite: {
+          attribute_one: 'One',
+          attribute_two: 2
+        },
+        option: {
+          attribute_two: 2
+        },
+        plus_one: 'bar'
+      });
     });
   });
 });
