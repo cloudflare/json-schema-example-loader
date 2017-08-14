@@ -47,7 +47,7 @@
         }
       },
       "targetSchema": {
-        "rel": "self"
+        "cfRecurse": ""
       }
     },
     {
@@ -55,7 +55,7 @@
       "href": "/fixtures/bazzes/{#/definitions/identifier}",
       "method": "GET",
       "targetSchema": {
-        "rel": "self"
+        "cfRecurse": ""
       }
     }
   ]

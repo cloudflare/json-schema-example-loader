@@ -61,10 +61,10 @@ describe('Example Data Extractor', function() {
       expect(this.example.composite).to.have.property('attribute_two').that.equals(2);
     });
 
-    it('should resolve rel=self references', function() {
+    it('should resolve cfRecurse references', function() {
       var obj = extractor.mapPropertiesToExamples({
         key: {
-          rel: 'self'
+          cfRecurse: ''
         }
       }, this.schema1);
       expect(obj).to.be.an('object');
@@ -117,10 +117,10 @@ describe('Example Data Extractor', function() {
       expect(this.example).to.have.property('option').that.has.key('attribute_two');
     });
 
-    it('should resolve rel=self references', function() {
+    it('should resolve cfRecurse', function() {
       expect(extractor.extract({
         key: {
-          rel: 'self'
+          cfRecurse: ''
         }
       }, this.schema1)).to.be.an('object');
     });
