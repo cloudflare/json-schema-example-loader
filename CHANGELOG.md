@@ -1,3 +1,22 @@
+## v3.0.0
+
+* The non-standard usage of "rel": "self" has been changed to a new
+  extension keyword, "cfRecurse": "".  The "" is technically a plain
+  (not URI fragment encoded) JSON Pointer (specifically the root pointer).
+  Currently, only the root pointer is supported, keeping parity with
+  the old "rel": "self" post-"$ref"-resolution recursion.
+
+* The non-standard "requestHeaders" and "private" fields have been
+  namespaced as "cfRequestHeaders" and "cfPrivate" respectively.
+
+* Fields that start with "\_\_" are no longer treated as private.
+  Use "cfPrivate" to flag private fields.
+
+* Two additional custom keywords have **not** been changed:
+  "extraProperties" will get a more extensive reworking in the
+  nearish future, and "example" becomes "examples" in the draft-06
+  of JSON Schema so it seems pointlessly disruptive to put a "cf" on it.
+
 ## v2.0.0
 
 * `"required"` and `"type"` now behave normally with the LDO's `"schema"` (previously they needed to be outside of `"schema"` at the top of the LDO)
