@@ -53,6 +53,13 @@ describe('Schema Transformer', function() {
       expect(this.link).to.have.property('parameters').that.is.an('object');
       expect(this.link).to.have.property('parameters').that.is.an.instanceOf(ObjectDefinition);
     });
+
+    it('should handle non-JSON media types', function() {
+      var mediaLink = transformer.transformLink(this.schema2, this.schema2.links[2]);
+
+      expect(mediaLink.curl).to.match(/\n--data \"hello\('world'\);\"$/);
+      expect(mediaLink.response).to.equal("hello('back');");
+    });
   });
 
   describe('#buildHref', function() {
