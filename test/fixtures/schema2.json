@@ -57,6 +57,19 @@
       "targetSchema": {
         "cfRecurse": ""
       }
+    },
+    {
+      "title": "Do a thing with a script",
+      "href": "/fixtures/scripts",
+      "method": "POST",
+      "encType": "application/javascript",
+      "schema": {
+        "example": "hello('world');"
+      },
+      "mediaType": "application/javascript",
+      "targetSchema": {
+        "example": "hello('back');"
+      }
     }
   ]
 }
