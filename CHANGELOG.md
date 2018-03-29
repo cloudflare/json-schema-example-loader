@@ -1,3 +1,7 @@
+## v3.1.0
+
+* Support added for "encType" and "mediaType" with raw string examples.
+
 ## v3.0.0
 
 * The non-standard usage of "rel": "self" has been changed to a new
