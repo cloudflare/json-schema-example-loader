@@ -1,4 +1,15 @@
-# JSON Schema Example Loader
+# JSON Schema Example Loader (DEPRECATED)
+
+While still used by the likewise-deprecated `doca` package, for the new `@cloudflare/doca`
+package, this package has been replaced by `@cloudflare/json-schema-apidoc-loader` in
+the [json-schema-tools](https://github.com/cloudflare/json-schema-tools) repository.
+It relies on several general-purpose JSON Schema utility packages that are also present
+in that repository.
+
+Unlike `json-schema-example-loader`, the output of `@cloudflare/json-schema-apidoc-loader` is
+still a valid JSON Schema, with extensions.
+
+-------
 
 This package is part of the [doca](https://github.com/cloudflare/doca) suite.  Please file any issues at the [doca repository](https://github.com/cloudflare/doca/issues)
 ## Installation
