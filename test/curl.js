@@ -53,7 +53,17 @@ describe('cURL Helper', function() {
         file: '@value'
       }, 'multipart/form-data');
 
-      expect(str).to.contain('--form "file=@value"');
+      expect(str).to.contain('--form \'file=@value\'');
+    });
+
+    it('should add multiple forms for encType mutlipart', function() {
+      var str = curl.generate('https://api.example.com/url', 'POST', null, {
+        value: 'someValue',
+        metadata: '{"someMetadataKey": "someMetadataValue"}'
+      }, 'multipart/form-data');
+
+      expect(str).to.contain('--form \'value=someValue\'');
+      expect(str).to.contain('--form \'metadata={"someMetadataKey": "someMetadataValue"}\'');
     });
   });
 
