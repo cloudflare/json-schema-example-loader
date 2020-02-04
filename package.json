@@ -27,7 +27,7 @@
   "homepage": "https://github.com/cloudflare/json-schema-example-loader#readme",
   "dependencies": {
     "loader-utils": "^0.2.15",
-    "lodash": "^3.10.0"
+    "lodash": "^4.17.13"
   },
   "devDependencies": {
     "chai": "^3.0.0",
