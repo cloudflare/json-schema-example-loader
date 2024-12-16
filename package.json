@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/cloudflare/json-schema-example-loader#readme",
   "dependencies": {
-    "loader-utils": "^0.2.15",
+    "loader-utils": "^1.4.1",
     "lodash": "^3.10.0"
   },
   "devDependencies": {
